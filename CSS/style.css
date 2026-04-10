@@ -1,0 +1,186 @@
+/* RESET */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* BASE */
+body {
+  font-family: "Inter", sans-serif;
+  background: #000;
+}
+
+/* HERO */
+.hero {
+  min-height: 100vh;
+  position: relative;
+  overflow: hidden;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  color: white;
+  padding: 40px 20px;
+}
+.hero::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background-image: url("../IMMAGINI/561105.jpg");
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  transform: scale(1.12);
+  animation: zoomOut 7s ease forwards, slowMove 20s linear infinite;
+  z-index: -3;
+}
+.hero::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(to bottom, rgba(0, 0, 0, 0.28), rgba(0, 0, 0, 0.42));
+  z-index: -2;
+}
+
+/* LOGO */
+.hero-logo {
+  position: absolute;
+  top: 28px;
+  left: 36px;
+  z-index: 3;
+  font-size: 0.95rem;
+  font-weight: 600;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: rgba(255, 255, 255, 0.85);
+  text-decoration: none;
+  transition: opacity 0.3s ease, letter-spacing 0.3s ease;
+  animation: fadeSoft 1.2s ease forwards;
+}
+.hero-logo:hover {
+  opacity: 0.75;
+  letter-spacing: 0.14em;
+}
+
+/* CONTENUTO CENTRALE */
+.hero-content {
+  position: relative;
+  z-index: 2;
+  max-width: 760px;
+  padding: 20px;
+}
+.hero-content h1 {
+  font-size: clamp(2.8rem, 6vw, 5.4rem);
+  font-weight: 700;
+  line-height: 0.95;
+  letter-spacing: -0.04em;
+  margin-bottom: 18px;
+  text-wrap: balance;
+  opacity: 0;
+  animation: fadeUp 1.4s cubic-bezier(0.22, 1, 0.36, 1) forwards;
+  animation-delay: 0.4s;
+}
+.hero-content p {
+  max-width: 620px;
+  margin: 0 auto 30px;
+  font-size: clamp(1rem, 1.8vw, 1.2rem);
+  line-height: 1.6;
+  color: rgba(255, 255, 255, 0.86);
+  opacity: 0;
+  animation: fadeUp 1.4 cubic-bezier(0.22, 1, 0.36, 1) forwards;
+  animation-delay: 0.8s;
+}
+.hero-content .btn {
+  opacity: 0;
+  animation: fadeUp 1.4s cubic-bezier(0.22, 1, 0.36, 1) forwards;
+  animation-delay: 1.2s;
+}
+
+/* BOTTONE */
+.btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 14px 28px;
+  border: 1px solid rgba(255, 255, 255, 0.18);
+  border-radius: 999px;
+  background: rgba(255, 255, 255, 0.92);
+  color: #111;
+  font-size: 0.98rem;
+  font-weight: 600;
+  letter-spacing: -0.01em;
+  cursor: pointer;
+  backdrop-filter: blur(8px);
+  transition: transform 0.3s ease, background 0.3s ease, box-shadow 0.3s ease;
+}
+.btn:hover {
+  transform: translateY(-2px) scale(1.01);
+  background: #ffffff;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.18);
+}
+
+/* ANIMAZIONI */
+@keyframes zoomOut {
+  from {
+    transform: scale(1.12);
+  }
+  to {
+    transform: scale(1);
+  }
+}
+@keyframes fadeSoft {
+  from {
+    opacity: 0;
+    transform: translateY(-16px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+@keyframes fadeUp {
+  from {
+    opacity: 0;
+    transform: translateY(40px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+@keyframes slowMove {
+  0% {
+    background-position: center;
+  }
+  50% {
+    background-position: 52% 48%;
+  }
+  100% {
+    background-position: center;
+  }
+}
+/* RESPONSIVE */
+@media (max-width: 768px) {
+  .hero {
+    align-items: flex-end;
+    padding-bottom: 90px;
+  }
+  .hero-logo {
+    top: 20px;
+    left: 20px;
+    font-size: 0.85rem;
+  }
+  .hero-content h1 {
+    font-size: clamp(2.2rem, 9vw, 3.4rem);
+  }
+  .hero-content p {
+    font-size: 1rem;
+  }
+  .btn {
+    padding: 13px 24px;
+    font-size: 0.95rem;
+  }
+}
+
+/*# sourceMappingURL=style.css.map */
