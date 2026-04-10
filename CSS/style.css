@@ -152,18 +152,18 @@ body {
 }
 
 /* SEZIONI */
-section:not(.hero) {
+section:not(.hero):not(.about-hero) {
   padding: 120px 24px;
   background: #f7f9f6;
   color: #1c1c1c;
   text-align: center;
 }
-section:not(.hero) h2 {
+section:not(.hero):not(.about-hero) h2 {
   font-size: clamp(2rem, 4vw, 3rem);
   margin-bottom: 20px;
   letter-spacing: -0.03em;
 }
-section:not(.hero) p {
+section:not(.hero):not(.about-hero) p {
   max-width: 700px;
   margin: 0 auto;
   line-height: 1.7;
@@ -235,6 +235,92 @@ section:not(.hero) p {
   }
   section:not(.hero) {
     padding: 90px 20px;
+  }
+}
+/* ABOUT PAGE */
+.about-page {
+  min-height: 100vh;
+  background: #000;
+}
+
+.about-hero {
+  min-height: 100vh;
+  position: relative;
+  overflow: hidden;
+  isolation: isolate;
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  padding: 120px 40px 60px;
+}
+.about-hero::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background-image: url("../IMMAGINI/ABOUT.jpg");
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  transform: scale(1.06);
+  animation: heroZoom 7s cubic-bezier(0.22, 1, 0.36, 1) forwards;
+  z-index: 0;
+}
+.about-hero::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(to right, rgba(0, 0, 0, 0.16), rgba(0, 0, 0, 0.42));
+  z-index: 1;
+}
+
+.about-panel {
+  position: relative;
+  z-index: 2;
+  width: min(100%, 520px);
+  padding: 36px 32px;
+  border-radius: 28px;
+  border: 1px solid rgba(255, 255, 255, 0.14);
+  background: rgba(255, 255, 255, 0.08);
+  backdrop-filter: blur(14px);
+  box-shadow: 0 20px 60px rgba(0, 0, 0, 0.22);
+}
+.about-panel .eyebrow {
+  display: inline-block;
+  margin-bottom: 16px;
+  font-size: 0.78rem;
+  font-weight: 600;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: rgba(255, 255, 255, 0.68);
+}
+.about-panel h1 {
+  font-size: clamp(2rem, 4vw, 3.4rem);
+  line-height: 0.98;
+  letter-spacing: -0.04em;
+  margin-bottom: 18px;
+  color: #fff;
+}
+.about-panel p {
+  font-size: 1rem;
+  line-height: 1.75;
+  color: rgba(255, 255, 255, 0.82);
+}
+
+@media (max-width: 768px) {
+  .about-hero {
+    justify-content: center;
+    align-items: flex-end;
+    padding: 110px 20px 40px;
+  }
+  .about-panel {
+    padding: 28px 22px;
+    border-radius: 22px;
+  }
+  .about-panel h1 {
+    font-size: clamp(1.8rem, 8vw, 2.6rem);
+  }
+  .about-panel p {
+    font-size: 0.98rem;
   }
 }
 
