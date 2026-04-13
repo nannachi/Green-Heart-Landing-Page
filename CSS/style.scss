@@ -203,7 +203,7 @@ body {
    BUTTON
 ========================= */
 
-.PulsanteHome {
+.btn {
   display: inline-block;
   padding: 13px 26px;
   border-radius: 999px;
@@ -216,6 +216,7 @@ body {
   font-weight: 500;
   transition: all 0.35s ease;
   cursor: pointer;
+
 
   &:hover {
     background: rgba(255, 255, 255, 0.2);
@@ -741,8 +742,7 @@ section:not(.hero):not(.about-hero):not(.projects-hero) {
 }
 
 
-/* CONTACT PAGE*/
-
+/* CONTACT PAGE */
 
 .contact-page {
   min-height: 100vh;
@@ -811,6 +811,10 @@ section:not(.hero):not(.about-hero):not(.projects-hero) {
     letter-spacing: 0.14em;
     text-transform: uppercase;
     color: rgba(255, 255, 255, 0.72);
+
+    opacity: 0;
+    animation: fadeUpSoft 1s cubic-bezier(0.22, 1, 0.36, 1) forwards;
+    animation-delay: 0.2s;
   }
 
   h1 {
@@ -819,6 +823,11 @@ section:not(.hero):not(.about-hero):not(.projects-hero) {
     letter-spacing: -0.05em;
     margin-bottom: 20px;
     color: $white;
+
+    opacity: 0;
+    filter: blur(8px);
+    animation: fadeBlurIn 1.4s cubic-bezier(0.22, 1, 0.36, 1) forwards;
+    animation-delay: 0.4s;
   }
 
   p {
@@ -827,6 +836,10 @@ section:not(.hero):not(.about-hero):not(.projects-hero) {
     font-size: 1.05rem;
     line-height: 1.75;
     color: rgba(255, 255, 255, 0.78);
+
+    opacity: 0;
+    animation: fadeUpSoft 1.2s cubic-bezier(0.22, 1, 0.36, 1) forwards;
+    animation-delay: 0.8s;
   }
 }
 
@@ -836,10 +849,8 @@ section:not(.hero):not(.about-hero):not(.projects-hero) {
   margin: 0 auto;
   padding: 24px 22px;
   border-radius: 20px;
-
-  background: rgba(255, 255, 255, 0.03); // 👈 più leggero
+  background: rgba(255, 255, 255, 0.03);
   backdrop-filter: blur(4px);
-
   border: 1px solid rgba(255, 255, 255, 0.06);
 }
 
@@ -863,27 +874,25 @@ section:not(.hero):not(.about-hero):not(.projects-hero) {
   }
 
   input,
-textarea {
-  width: 100%;
-  padding: 14px 8px; // 👈 meno padding laterale (più minimal)
-  border: none;
-  border-bottom: 1px solid rgba(255, 255, 255, 0.25);
-  background: transparent; // 👈 fondamentale
-  color: $white;
+  textarea {
+    width: 100%;
+    padding: 14px 8px;
+    border: none;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.25);
+    background: transparent;
+    color: $white;
+    font: inherit;
+    outline: none;
+    transition: border-color 0.3s ease;
 
-  font: inherit;
-  outline: none;
+    &::placeholder {
+      color: rgba(255, 255, 255, 0.4);
+    }
 
-  transition: border-color 0.3s ease;
-
-  &::placeholder {
-    color: rgba(255, 255, 255, 0.4);
+    &:focus {
+      border-bottom-color: rgba(255, 255, 255, 0.6);
+    }
   }
-
-  &:focus {
-    border-bottom-color: rgba(255, 255, 255, 0.6);
-  }
-}
 
   textarea {
     resize: vertical;
@@ -931,4 +940,3 @@ textarea {
     max-width: 100%;
   }
 }
-

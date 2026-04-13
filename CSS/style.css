@@ -146,7 +146,7 @@ body {
 /* =========================
    BUTTON
 ========================= */
-.PulsanteHome {
+.btn {
   display: inline-block;
   padding: 13px 26px;
   border-radius: 999px;
@@ -160,7 +160,7 @@ body {
   transition: all 0.35s ease;
   cursor: pointer;
 }
-.PulsanteHome:hover {
+.btn:hover {
   background: rgba(255, 255, 255, 0.2);
   transform: translateY(-2px) scale(1.02);
   box-shadow: 0 10px 30px rgba(0, 0, 0, 0.25);
@@ -609,7 +609,7 @@ section:not(.hero):not(.about-hero):not(.projects-hero) p {
     padding: 90px 20px;
   }
 }
-/* CONTACT PAGE*/
+/* CONTACT PAGE */
 .contact-page {
   min-height: 100vh;
   background: #000;
@@ -669,6 +669,9 @@ section:not(.hero):not(.about-hero):not(.projects-hero) p {
   letter-spacing: 0.14em;
   text-transform: uppercase;
   color: rgba(255, 255, 255, 0.72);
+  opacity: 0;
+  animation: fadeUpSoft 1s cubic-bezier(0.22, 1, 0.36, 1) forwards;
+  animation-delay: 0.2s;
 }
 .contact-copy h1 {
   font-size: clamp(2.8rem, 6vw, 5rem);
@@ -676,6 +679,10 @@ section:not(.hero):not(.about-hero):not(.projects-hero) p {
   letter-spacing: -0.05em;
   margin-bottom: 20px;
   color: #ffffff;
+  opacity: 0;
+  filter: blur(8px);
+  animation: fadeBlurIn 1.4s cubic-bezier(0.22, 1, 0.36, 1) forwards;
+  animation-delay: 0.4s;
 }
 .contact-copy p {
   max-width: 520px;
@@ -683,6 +690,9 @@ section:not(.hero):not(.about-hero):not(.projects-hero) p {
   font-size: 1.05rem;
   line-height: 1.75;
   color: rgba(255, 255, 255, 0.78);
+  opacity: 0;
+  animation: fadeUpSoft 1.2s cubic-bezier(0.22, 1, 0.36, 1) forwards;
+  animation-delay: 0.8s;
 }
 
 .contact-panel {
