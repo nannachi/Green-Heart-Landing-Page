@@ -203,7 +203,7 @@ body {
    BUTTON
 ========================= */
 
-.btn {
+.PulsanteHome {
   display: inline-block;
   padding: 13px 26px;
   border-radius: 999px;
@@ -215,6 +215,7 @@ body {
   font-size: 0.95rem;
   font-weight: 500;
   transition: all 0.35s ease;
+  cursor: pointer;
 
   &:hover {
     background: rgba(255, 255, 255, 0.2);
